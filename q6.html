@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript">
+    var principal = 0;
+    var interestRate = 0;
+    var termOfLoan = 0;
+    var amount = 0;
+
+    function simpleInterest() {
+      event.preventDefault();
+      var principal = parseFloat(document.getElementById("principalSimple").value);
+      var interestRate = parseFloat(document.getElementById("interestSimple").value);
+      interestRate = interestRate / 100;
+      var termOfLoan = parseFloat(document.getElementById("termSimple").value);
+      var simpleInt = principal * interestRate * termOfLoan;
+      var amount = (principal + simpleInt).toFixed(2);
+      document.getElementById("siOutput-01").innerHTML = "Interest: " + simpleInt.toFixed(2)+"/-";
+      document.getElementById("siOutput-02").innerHTML = "Total plus interest: " + amount+"/-";
+    }
+  
+  </script>
+  <style>
+      button {   
+       background-color: #4CAF50;   
+       width: 100%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+  .container {   
+    padding: 25px;   
+    background-color: burlywood;
+   }   </style>
+</head>
+<body>
+    <div class="jumbotron">
+    <h1 class="text-center display-4" style="text-align: center; background-color: aqua;"> Simple Interest</h1>
+    <hr>
+  <div class="container" id="simple-interest">
+    <form id="siForm">
+      <div class="form-group">
+        <label for="principalSimple">Principal Amount</label>
+        <br>
+        <input type="text" class="form-control" id="principalSimple" placeholder="Enter the amount">
+      </div>
+      <div class="form-group">
+          <br>
+        <label for="interestSimple">Interest Rate</label>
+        <br>
+        <input type="text" class="form-control" id="interestSimple" placeholder="Enter in %">
+      </div>
+      <div class="form-group">
+          <br>
+        <label for="termSimple">Number Of Years : </label>
+        <br>
+        <input type="text" class="form-control" id="termSimple" placeholder="Enter Number Of Years">
+      </div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary" id="btnSimple" onclick="simpleInterest()">Submit</button>
+    </form>
+    <div>
+      <p class="lead mt-3" id="siOutput-01"></p>
+      <p class="lead mb-3" id="siOutput-02"></p>
+    </div>
+  </div>
+  <br>
+  <hr>
+</body>
+</html>

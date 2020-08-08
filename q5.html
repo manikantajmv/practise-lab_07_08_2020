@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Names</title>
+    <script type="text/javascript">
+        function sorting()
+        {
+        var n=prompt("Enter Number of names to sort");
+        n=parseInt(n);    
+        var a=[]; 
+        for(var i=0;i<n;i++) {
+        a[i]=(prompt("Enter name"+i)); 
+        }
+        a.sort();
+        for (var i=0;i<n;i++) {
+        document.write(a[i]+", ");
+        }
+        }
+        </script>
+    
+</head>
+    <body>
+        <button style="text-align: center;" onclick="sorting()"><b>click on this to see working</b></button>
+    </body>
+</html>
